@@ -1,0 +1,71 @@
+/* Remove padding and margin */ 
+*  
+{ 
+  margin: 0; 
+  padding: 0; 
+  border: 0; 
+}
+
+body{
+  background-color: #0F141E;
+}
+
+/* NAV */
+.nav{
+  display: block;
+  width: 90px;
+  height: 100vh;
+  background-color: #B8747F;
+  border-right: 2px solid white;
+}
+
+.nav > .icon{
+  position: relative;
+  top: 90%;
+  margin: 0 calc(50% - 8px);
+  color: #ffffff;
+}
+
+.menuButton{
+  position: relative;
+  top: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.menuButton .icon{
+  transform: rotate(180deg);
+}
+
+.menuButton .line{
+  float: left;
+  clear: left;
+  height: 1.7px;
+  background-color: #ffffff;
+}
+
+.menuButton .line:nth-child(1){
+  width: 13px;
+}
+
+.menuButton .line:nth-child(2){
+  width: 23px;
+  margin: 5px 0;
+}
+
+.menuButton .line:nth-child(3){
+  width: 18px;
+}
+
+.menuButton .text{
+  font-family: 'Cantata One', serif;
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  transform: rotate(-90deg);
+  margin: 0 calc(50% - 75px) calc(50% - 38px);
+}
+/* NAV */
