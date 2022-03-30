@@ -34,7 +34,26 @@ nav{
   position: fixed;
 }
 
-.nav{
+.navClose, .navClose .icon, .navClose:hover .icon, .navClose .text, .navClose:hover .text{
+  transition: .5s;
+}
+
+.navClose:hover, .navClose:hover ~ .navOpen {
+  transform: translateX(20px);
+  transition: .5s;
+}
+
+.navClose{
+  position: relative;
+  left: -20px;
+  width: 110px;
+  cursor: pointer;
+  background-color: #B8747F;
+}
+
+.navClose .nav{
+  position: relative;
+  left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -42,53 +61,57 @@ nav{
   justify-content: space-evenly;
   width: 90px;
   height: 100vh;
-  background-color: #B8747F;
-  border-right: 2px solid white;
 }
 
-.nav .icon{
+.navClose .icon, .navClose .text{
   transform: rotate(180deg);
-  cursor: pointer;
 }
 
-.nav .line{
+.navClose:hover .icon{
+  transform: rotate(270deg) translateY(8px);
+}
+
+.navClose .line{
   float: left;
   clear: left;
   height: 1.7px;
   background-color: #ffffff;
 }
 
-.nav .line:nth-child(1){
+.navClose .line:nth-child(1){
   width: 13px;
 }
 
-.nav .line:nth-child(2){
+.navClose .line:nth-child(2){
   width: 23px;
   margin: 5px 0;
 }
 
-.nav .line:nth-child(3){
+.navClose .line:nth-child(3){
   width: 18px;
 }
 
-.nav .text{
-  cursor: pointer;
+.navClose:hover .text{
+  transform: rotate(270deg) translatex(-36px) translateY(-30px);
+}
+
+.navClose .text{
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 1rem;
+  letter-spacing: .7rem;
   writing-mode:vertical-lr;
-  transform: rotate(180deg);
   padding: 12px 2px 0 2px;
 }
-/* NAV */
 
-/* NAV-OPEN */
+/* Nav Open */
 .navOpen{
-  display: none;
-  position: fixed;
-  top: 0;
-  /*left: 90px;*/
-  left: calc(-48vw + 240px);
+  transition: .5s;
+  /* display: none; */
+  z-index: -1;
+  position: relative;
+  top: -100vh;
+  left: 90px;
+  left: calc(-48vw + 182px);
   width: calc(48vw - 90px);
   height: 100vh;
   background-color: #B8747F;
@@ -117,8 +140,9 @@ nav{
   align-items: center;
   justify-content: space-around;
 }
+/* Nav Open */
 
-/* NAV-OPEN */
+/* NAV */
 
 
 /* HEADER */
@@ -128,24 +152,25 @@ header{
   margin-left: 90px;
 }
 
-.centerTitle{
+.centerElements{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.centerTitle h2{
+.centerElements h2{
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   margin-top: 40px;
 }
 
-.centerTitle .icon{
+.centerElements .icon{
   position: absolute;
   top: 97%;
 }
 
+/* Grid Container */
 .gridContainer{
   display: grid;
   grid-template-columns: 50% 50%;
@@ -186,6 +211,7 @@ h1{
   margin-right: 8rem;
 }
 
+/* Animated text */
 .textAnimation{
   text-transform: uppercase;
   writing-mode:vertical-lr;
@@ -226,7 +252,7 @@ h1{
 }
 
 .textAnimation .slideUp2{
-  animation: 20s linear infinite 10s slideUp;
+  animation: 20s linear infinite -10s slideUp;
 }
 
 @keyframes slideUp {
@@ -247,7 +273,7 @@ h1{
 }
 
 .textAnimation .slideDown2{
-  animation: 20s linear infinite 10s slideDown;
+  animation: 20s linear infinite -10s slideDown;
 }
 
 @keyframes slideDown {
