@@ -67,7 +67,7 @@ nav{
   transform: rotate(180deg);
 }
 
-.navClose:hover .icon{
+.navClose:hover .icon {
   transform: rotate(270deg) translateY(8px);
 }
 
@@ -111,11 +111,14 @@ nav{
   position: relative;
   top: -100vh;
   left: 90px;
-  left: calc(-48vw + 182px);
   width: calc(48vw - 90px);
   height: 100vh;
   background-color: #B8747F;
   border-right: 2px solid white;
+}
+
+.open{
+  left: calc(-48vw + 182px);
 }
 
 .navOpen .linkIn{
@@ -236,7 +239,7 @@ h1{
 .textAnimation p{
   font-size: 96px;
   white-space: nowrap;
-  height: 200%;
+  height: 1900px; /* To adjust according to the text */
   max-width: 110px;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
